@@ -58,7 +58,7 @@
               <v-row>
                 <transition-group name="project-cards" class="row">
                   <v-col
-                    v-for="item in projects"
+                    v-for="(item, idx) in projects"
                     :key="item.id"
                     cols="12"
                     sm="4"
@@ -66,7 +66,14 @@
                     xl="4"
                     class="project-cards-item"
                   >
-                    <v-card max-width="379" justify="center">
+                    <v-card
+                      max-width="379"
+                      justify="center"
+                      hover
+                      v-bind:style="{
+                        transform: 'rotate(' + getRotation(idx, 2.5) + 'deg)',
+                      }"
+                    >
                       <v-responsive :aspect-ratio="0.83">
                         <v-img
                           :src="getImgUrl(item.img)"
@@ -211,6 +218,10 @@ export default {
     getImgUrl: function (pic) {
       return require("@/assets/" + pic + ".png");
     },
+    getRotation: function (idx, bound) {
+      let direction = idx % 2 ? 1 : -1;
+      return Math.random() * direction * bound;
+    },
   },
   computed: {
     projects: function () {
@@ -226,3 +237,26 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.project-cards-item {
+  transition: all 0.8s;
+}
+
+.project-cards-enter,
+.project-cards-leave-to {
+  opacity: 0;
+  transform: translate(50%, 200%);
+}
+.project-cards-leave-active {
+  position: absolute;
+}
+
+.v-card__title {
+  word-break: normal !important;
+}
+
+.v-image__image {
+  border: 0.5px solid grey;
+}
+</style>
