@@ -35,6 +35,38 @@
               </v-row>
             </v-container>
           </v-container>
+          <v-container fluid style="background: #fff8ef" class="pt-15">
+            <v-container class="text-center">
+              <h3 class="text-h3">Project snapshots</h3>
+              <p class="mt-5">
+                Click for a summary. For more details, get in touch.
+              </p>
+              <v-row>
+                <transition-group name="project-cards" class="row">
+                  <v-col
+                    v-for="item in projects"
+                    :key="item.id"
+                    cols="12"
+                    sm="4"
+                    lg="4"
+                    xl="4"
+                    class="project-cards-item"
+                  >
+                    <v-card max-width="379" justify="center">
+                      <v-responsive :aspect-ratio="0.83">
+                        <v-card-title class="text-center justify-center">{{
+                          item.title
+                        }}</v-card-title>
+                        <v-card-subtitle class="text-center">{{
+                          item.text
+                        }}</v-card-subtitle>
+                      </v-responsive>
+                    </v-card>
+                  </v-col>
+                </transition-group>
+              </v-row>
+            </v-container>
+          </v-container>
           <v-container>
             <v-container text-center>
               <v-icon class="mx-3">mdi-open-in-new</v-icon>
@@ -79,6 +111,79 @@ export default {
         id: 3,
         name: "Google Scholar",
         link: "https://scholar.google.com/citations?hl=en&user=TNhT7zkAAAAJ",
+      },
+    ],
+    projects: [
+      {
+        id: 1,
+        title: "Inferring Implicit Relevance from Physiological Signals",
+        text: "PhD thesis",
+        img: "phd",
+        categories: ["design", "data", "privacy", "pm", "swe", "writing"],
+        description:
+          "Researched whether artificial intelligence could infer someone's perceived relevance of information from their biometrics. Machine learning models could be useful for augmenting intelligence analysis by offering an element of objectivity to an inherently subjective task, and thus improve introspection and collaboration. Final results indicated performance was not commensurate to privacy risks.",
+      },
+      {
+        id: 2,
+        title: "Phishing Tacklebox",
+        text: "Outlook add-in web app",
+        img: "tacklebox",
+        categories: ["design", "privacy", "cyber", "swe", "pm", "writing"],
+        description:
+          "Office Add-in web app to intuitively report suspicious messages and inspect email header fields such as DMARC values and originating IPs. Developed with Office JavaScript and Microsoft Graph APIs, hosted on AWS, and deployed centrally via O365 Admin Center to 30,000 users across Windows, MacOS, Web, iOS, and Android clients. Progress was personally briefed up to CISO.",
+      },
+      {
+        id: 3,
+        title: "Hall of Phame",
+        text: "Phishing awareness program",
+        img: "hall-of-phame",
+        categories: [
+          "design",
+          "data",
+          "privacy",
+          "pm",
+          "swe",
+          "writing",
+          "cyber",
+        ],
+        description:
+          "Designed, developed, and managed a year-long phishing and malspam simulation teaching users about email-based threats. Involved customising phishing simulation software to model TTPs of different real-world threat actors each month. Results were personally briefed up to CISO.",
+      },
+      {
+        id: 4,
+        title: "Tail-gator",
+        text: "Physical security poster campaign",
+        img: "tailgator",
+        categories: ["design", "pm"],
+        description:
+          "Designed simple slogan and graphic for posters placed at all points of entry to reinforce use of swipe passes.",
+      },
+      {
+        id: 5,
+        title: "IRAP training materials",
+        text: "Australian Government policy",
+        img: "irap",
+        categories: ["writing", "cyber"],
+        description:
+          "Oversaw the technical qualification, training, and examination framework of the Australian Government's Information Security Registered Assessors Program from 2012-2018.",
+      },
+      {
+        id: 6,
+        title: "ANU Human-Centred Computing Workshop",
+        text: "Interactive outreach web app",
+        img: "hcc-workshop",
+        categories: ["design", "pm", "swe", "privacy", "cyber", "writing"],
+        description:
+          "Developed Django and JavaScript web app containing interactive learning experiences which showcased areas of computer science research at The Australian National University. Managed deployment, administration, and security of build pipeline and VPS hosting.",
+      },
+      {
+        id: 7,
+        title: "Australasian Computer Science Week - ACSW 2016",
+        text: "Conference program",
+        img: "acsw",
+        categories: ["design", "swe", "writing"],
+        description:
+          "Web chair for ACSW 2016, responsible for developing the web conference timetable and program using JavaScript. Designed the physical conference handout.",
       },
     ],
   }),
