@@ -28,8 +28,11 @@
                   </p>
                   <p class="mt-10 text-h4 font-weight-light text-center">
                     I develop engaging and intuitive programs to drive safer
-                    user behaviours using my blend of data science, software
-                    engineering, and design skills.
+                    user behaviours using my blend of
+                    <span class="data-sci highlight">data science</span>,
+                    <span class="software-dev highlight"
+                      >software engineering</span
+                    >, and <span class="design highlight">design</span> skills.
                   </p>
                 </v-col>
               </v-row>
@@ -294,5 +297,40 @@ export default {
   opacity: 1 !important;
   position: absolute;
   width: 100%;
+}
+
+.highlight {
+  background-size: 110% 60%;
+  background-position: 100% 90%;
+  transition: background-size 0.25s ease-in;
+  font-weight: 500;
+}
+
+.highlight:hover {
+  background-size: 100% 250%;
+  color: black;
+  text-shadow: none;
+}
+
+.data-sci {
+  background-image: linear-gradient(
+    0,
+    rgba(5, 166, 107, 0.4) 50%,
+    transparent 50%
+  );
+}
+.software-dev {
+  background-image: linear-gradient(
+    0,
+    rgba(242, 107, 107, 0.4) 50%,
+    transparent 50%
+  );
+}
+.design {
+  background-image: linear-gradient(
+    0,
+    rgba(91, 181, 217, 0.4) 50%,
+    transparent 50%
+  );
 }
 </style>
