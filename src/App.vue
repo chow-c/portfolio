@@ -54,6 +54,11 @@
                   >
                     <v-card max-width="379" justify="center">
                       <v-responsive :aspect-ratio="0.83">
+                        <v-img
+                          :src="getImgUrl(item.img)"
+                          class="mx-5 mt-5"
+                          aspect-ratio="1"
+                        ></v-img>
                         <v-card-title class="text-center justify-center">{{
                           item.title
                         }}</v-card-title>
@@ -187,5 +192,10 @@ export default {
       },
     ],
   }),
+  methods: {
+    getImgUrl: function (pic) {
+      return require("@/assets/" + pic + ".png");
+    },
+  },
 };
 </script>
