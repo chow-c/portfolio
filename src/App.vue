@@ -41,6 +41,20 @@
               <p class="mt-5">
                 Click for a summary. For more details, get in touch.
               </p>
+              <v-row class="my-10 justify-center">
+                <v-chip-group v-model="skills" column multiple>
+                  <v-icon class="mx-3">mdi-filter-variant</v-icon>
+                  <v-chip filter label value="cyber">cyber security</v-chip>
+                  <v-chip filter label value="design">design</v-chip>
+                  <v-chip filter label value="data">data science</v-chip>
+                  <v-chip filter label value="pm">program management</v-chip>
+                  <v-chip filter label value="swe">software engineering</v-chip>
+                  <v-chip filter label value="writing"
+                    >technical writing</v-chip
+                  >
+                  <v-chip filter label value="privacy">privacy</v-chip>
+                </v-chip-group>
+              </v-row>
               <v-row>
                 <transition-group name="project-cards" class="row">
                   <v-col
@@ -101,6 +115,7 @@ export default {
   components: {},
 
   data: () => ({
+    skills: [],
     socials: [
       {
         id: 1,
@@ -118,7 +133,7 @@ export default {
         link: "https://scholar.google.com/citations?hl=en&user=TNhT7zkAAAAJ",
       },
     ],
-    projects: [
+    all_projects: [
       {
         id: 1,
         title: "Inferring Implicit Relevance from Physiological Signals",
@@ -195,6 +210,18 @@ export default {
   methods: {
     getImgUrl: function (pic) {
       return require("@/assets/" + pic + ".png");
+    },
+  },
+  computed: {
+    projects: function () {
+      if (this.skills.length) {
+        let searchValue = this.skills;
+        return this.all_projects.filter(function (project) {
+          return searchValue.some((r) => project.categories.includes(r));
+        });
+      } else {
+        return this.all_projects;
+      }
     },
   },
 };
