@@ -1,39 +1,43 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+    <v-main>
+      <div id="app">
+        <v-container fluid class="pa-0">
+          <v-container fluid class="mt-4">
+            <v-container class="my-md-10">
+              <v-row class="mt-md-16">
+                <v-col>
+                  <h1
+                    class="
+                      text-h1
+                      font-weight-black
+                      mb-3
+                      primary--text
+                      text-center
+                    "
+                  >
+                    Hello, I'm Chris.
+                  </h1>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col>
+                  <p class="mt-10 text-h4 font-weight-light text-center">
+                    I'm a technical analyst and program manager, specialising in
+                    cyber security.
+                  </p>
+                  <p class="mt-10 text-h4 font-weight-light text-center">
+                    I develop engaging and intuitive programs to drive safer
+                    user behaviours using my blend of data science, software
+                    engineering, and design skills.
+                  </p>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-container>
+        </v-container>
       </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main> </v-main>
+    </v-main>
   </v-app>
 </template>
 
