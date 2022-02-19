@@ -35,6 +35,22 @@
               </v-row>
             </v-container>
           </v-container>
+          <v-container>
+            <v-container text-center>
+              <v-icon class="mx-3">mdi-open-in-new</v-icon>
+              <v-btn
+                class="ma-1"
+                color="primary"
+                outlined
+                v-for="(item, index) in socials"
+                :key="index"
+                :href="item.link"
+                target="_blank"
+              >
+                {{ item.name }}
+              </v-btn>
+            </v-container>
+          </v-container>
         </v-container>
       </div>
     </v-main>
@@ -48,7 +64,23 @@ export default {
   components: {},
 
   data: () => ({
-    //
+    socials: [
+      {
+        id: 1,
+        name: "LinkedIn",
+        link: "https://www.linkedin.com/in/chow-c/",
+      },
+      {
+        id: 2,
+        name: "GitHub",
+        link: "https://github.com/chow-c",
+      },
+      {
+        id: 3,
+        name: "Google Scholar",
+        link: "https://scholar.google.com/citations?hl=en&user=TNhT7zkAAAAJ",
+      },
+    ],
   }),
 };
 </script>
