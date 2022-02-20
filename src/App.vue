@@ -209,6 +209,15 @@ export default {
           "Designed, developed, and managed a year-long phishing and malspam simulation teaching users about email-based threats. Involved customising phishing simulation software to model TTPs of different real-world threat actors each month. Results were personally briefed up to CISO.",
       },
       {
+        id: 8,
+        title: "The Short Life of a Secret",
+        text: "Learning experience web app",
+        img: "short-life-secret",
+        categories: ["design", "swe", "writing", "pm", "cyber"],
+        description:
+          "Designed and developed an in-browser web app to educate users about passphrase security. Interactivity built around a narrative written by a colleague, and leveraged Dropbox's zxcvbn and the Pwned Passwords API.",
+      },
+      {
         id: 4,
         title: "Tail-gator",
         text: "Physical security poster campaign",
@@ -218,15 +227,6 @@ export default {
           "Designed simple slogan and graphic for posters placed at all points of entry to reinforce use of swipe passes.",
       },
       {
-        id: 5,
-        title: "IRAP training materials",
-        text: "Australian Government policy",
-        img: "irap",
-        categories: ["writing", "cyber"],
-        description:
-          "Oversaw the technical qualification, training, and examination framework of the Australian Government's Information Security Registered Assessors Program from 2012-2018.",
-      },
-      {
         id: 6,
         title: "ANU Human-Centred Computing Workshop",
         text: "Interactive outreach web app",
@@ -234,6 +234,15 @@ export default {
         categories: ["design", "pm", "swe", "privacy", "cyber", "writing"],
         description:
           "Developed Django and JavaScript web app containing interactive learning experiences which showcased areas of computer science research at The Australian National University. Managed deployment, administration, and security of build pipeline and VPS hosting.",
+      },
+      {
+        id: 5,
+        title: "IRAP training materials",
+        text: "Australian Government policy",
+        img: "irap",
+        categories: ["writing", "cyber"],
+        description:
+          "Oversaw the technical qualification, training, and examination framework of the Australian Government's Information Security Registered Assessors Program from 2012-2018.",
       },
       {
         id: 7,
