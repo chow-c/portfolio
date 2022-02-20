@@ -82,7 +82,7 @@
                     >
                       <v-responsive
                         :aspect-ratio="0.83"
-                        @click="selectedCard = idx"
+                        @click="selectedCard = item.id"
                       >
                         <v-img
                           :src="getImgUrl(item.img)"
@@ -98,7 +98,7 @@
                       </v-responsive>
                       <v-expand-transition>
                         <v-sheet
-                          v-if="selectedCard === idx"
+                          v-if="selectedCard === item.id"
                           class="
                             transition-fast-in-fast-out
                             v-card--reveal
