@@ -189,7 +189,7 @@ export default {
         img: "tacklebox",
         categories: ["design", "privacy", "cyber", "swe", "pm", "writing"],
         description:
-          "Office Add-in web app to intuitively report suspicious messages and inspect email header fields such as DMARC values and originating IPs. Developed with Office JavaScript and Microsoft Graph APIs, hosted on AWS, and deployed centrally via O365 Admin Center to 30,000 users across Windows, MacOS, Web, iOS, and Android clients. Progress was personally briefed up to CISO.",
+          "Office Add-in web app to intuitively report suspicious messages and inspect email header fields such as DMARC values and originating IPs. Developed with Office JavaScript and Microsoft Graph APIs, hosted on AWS, and deployed centrally via O365 Admin Center to 16,000 users across Windows, MacOS, Web, iOS, and Android clients. Progress was personally briefed up to CISO.",
       },
       {
         id: 3,
