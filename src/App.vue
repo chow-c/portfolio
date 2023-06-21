@@ -69,56 +69,7 @@
                     xl="4"
                     class="project-cards-item"
                   >
-                    <v-card
-                      max-width="379"
-                      justify="center"
-                      hover
-                      v-bind:style="[
-                        idx === selectedCard ? { elevation: 10 } : {},
-                        {
-                          transform: 'rotate(' + getRotation(idx, 2.5) + 'deg)',
-                        },
-                      ]"
-                    >
-                      <v-responsive
-                        :aspect-ratio="0.83"
-                        @click="selectedCard = item.id"
-                      >
-                        <v-img
-                          :src="getImgUrl(item.img)"
-                          class="mx-5 mt-5"
-                          aspect-ratio="1"
-                        ></v-img>
-                        <v-card-title class="text-center justify-center">{{
-                          item.title
-                        }}</v-card-title>
-                        <v-card-subtitle class="text-center">{{
-                          item.text
-                        }}</v-card-subtitle>
-                      </v-responsive>
-                      <v-expand-transition>
-                        <v-sheet
-                          v-if="selectedCard === item.id"
-                          class="
-                            transition-fast-in-fast-out
-                            v-card--reveal
-                            pa-3
-                            d-flex
-                            flex-column
-                            justify-center
-                          "
-                          style="height: 100%"
-                          @click="selectedCard = null"
-                        >
-                          <v-card-text class="pb-0 text-center">
-                            <p class="text-h5 text--primary">
-                              {{ item.title }}
-                            </p>
-                            <p class="text-body-1">{{ item.description }}</p>
-                          </v-card-text>
-                        </v-sheet>
-                      </v-expand-transition>
-                    </v-card>
+                    <Polaroid :idx="idx" :item="item" />
                   </v-col>
                 </transition-group>
               </v-row>
@@ -147,13 +98,14 @@
 </template>
 
 <script>
+import Polaroid from "@/components/Polaroid.vue";
+
 export default {
   name: "App",
 
-  components: {},
+  components: { Polaroid },
 
   data: () => ({
-    selectedCard: null,
     skills: [],
     socials: [
       {
@@ -189,7 +141,7 @@ export default {
         img: "tacklebox",
         categories: ["design", "privacy", "cyber", "swe", "pm", "writing"],
         description:
-          "Office Add-in web app to intuitively report suspicious messages and inspect email header fields such as DMARC values and originating IPs. Developed with Office JavaScript and Microsoft Graph APIs, hosted on AWS, and deployed centrally via O365 Admin Center to 30,000 users across Windows, MacOS, Web, iOS, and Android clients. Progress was personally briefed up to CISO.",
+          "Office Add-in web app to intuitively report suspicious messages and inspect email header fields such as DMARC values and originating IPs. Developed with Office JavaScript and Microsoft Graph APIs, hosted on AWS, and deployed centrally via O365 Admin Center to 16,000 users across Windows, MacOS, Web, iOS, and Android clients. Progress was personally briefed up to CISO.",
       },
       {
         id: 3,
@@ -255,15 +207,6 @@ export default {
       },
     ],
   }),
-  methods: {
-    getImgUrl: function (pic) {
-      return require("@/assets/" + pic + ".png");
-    },
-    getRotation: function (idx, bound) {
-      let direction = idx % 2 ? 1 : -1;
-      return Math.random() * direction * bound;
-    },
-  },
   computed: {
     projects: function () {
       if (this.skills.length) {
@@ -291,21 +234,6 @@ export default {
 }
 .project-cards-leave-active {
   position: absolute;
-}
-
-.v-card__title {
-  word-break: normal !important;
-}
-
-.v-image__image {
-  border: 0.5px solid grey;
-}
-
-.v-card--reveal {
-  bottom: 0;
-  opacity: 1 !important;
-  position: absolute;
-  width: 100%;
 }
 
 .highlight {
